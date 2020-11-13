@@ -8,6 +8,8 @@
     android:background="@android:color/background_light"
     android:orientation="vertical"
     android:padding="10dp"
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_graph"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -41,11 +43,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
         android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/list_item">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -55,9 +57,9 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
         android:background="@color/cardview_light_background"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="4dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,15 +70,15 @@
             android:textStyle="bold" />
 
 
-    <ImageButton
-        android:id="@+id/iploadButton"
-        android:onClick="upload"
-        android:src="@drawable/ic_baseline_cached_24"
-        android:layout_marginStart="130dp"
-        android:text="Обновить"
-        android:textSize="12dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <ImageButton
+            android:id="@+id/iploadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:onClick="upload"
+            android:src="@drawable/ic_baseline_cached_24"
+            android:text="Обновить"
+            android:textSize="12dp" />
 
     </LinearLayout>
 

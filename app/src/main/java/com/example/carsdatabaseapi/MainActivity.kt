@@ -1,14 +1,10 @@
 package com.example.carsdatabaseapi
 
-import android.content.Context
 import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.Network
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getSystemService
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carsdatabaseapi.adapter.CarAdapter
@@ -22,6 +18,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+    var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, "Work without INTERNET", Toast.LENGTH_SHORT)
                         .show()
 
-                    //create data for connection withour Internet
+                    //create data for connection without Internet
 
                     val carsFailureList = ArrayList<Result>()
                     carsFailureList.add(Result(3434, "BMW", 1, "A5"))
@@ -79,11 +76,6 @@ class MainActivity : AppCompatActivity() {
 
         // Activity being restarted from stopped state
     }
-
-    fun upload(view: View) {
-        onRestart()
-    }
-
 }
 
 

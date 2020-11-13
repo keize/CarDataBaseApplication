@@ -44,8 +44,6 @@ class CarAdapter(var carList: List<Result>, val context: Context) :
             holder.itemView.context.startActivity(intent)
             Log.d("clicksend", carModel.Model_Name)  // check my intent send info
 
-
-
         }
 
     }
@@ -62,7 +60,6 @@ class CarAdapter(var carList: List<Result>, val context: Context) :
         var modelText = itemView.findViewById<TextView>(R.id.tv_model)
         var brandID = itemView.findViewById<TextView>(R.id.tv_brandID)
         var modelID = itemView.findViewById<TextView>(R.id.tv_modelID)
-
 
 
     }
