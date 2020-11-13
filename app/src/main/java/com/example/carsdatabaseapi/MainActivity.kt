@@ -2,6 +2,7 @@ package com.example.carsdatabaseapi
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -75,6 +76,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent) // Always call the superclass method first
 
         // Activity being restarted from stopped state
+    }
+
+    // onClick for upload button
+
+    fun upload(view: View) {
+        onRestart()
     }
 }
 
