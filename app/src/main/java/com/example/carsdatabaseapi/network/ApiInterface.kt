@@ -8,13 +8,7 @@ import retrofit2.http.GET
 
 interface ApiInterface {
 
-//    @GET("honda?format=json")
-//    fun getList(
-//        @Query("channelId") channelID: String,
-//        @Query("key") apiKey: String,
-//        @Query("maxResults") limit: Int
-//    )
-//            : Call<Result>
+    // GET request to API
 
     @GET("honda?format=json")
     fun getcarList(): Call<CarResponse>

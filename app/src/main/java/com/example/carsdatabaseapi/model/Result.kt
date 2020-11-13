@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class Result(
 
+    // data model from JSON with Retrofit annotation
+
     @SerializedName("Make_ID")
     val Make_ID: Int,
 
