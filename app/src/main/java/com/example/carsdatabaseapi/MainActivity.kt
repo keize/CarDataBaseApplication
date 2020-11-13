@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.Network
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.getSystemService
@@ -25,11 +26,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        
-
         getCars()
-
     }
 
 
@@ -46,14 +43,16 @@ class MainActivity : AppCompatActivity() {
                         recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
                         recyclerView.setHasFixedSize(true)
                         recyclerView.adapter = adapter
+                        adapter.notifyDataSetChanged();
                     }
-
-
                 }
 
-
                 override fun onFailure(call: Call<CarResponse>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, "Work without INTERNET", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "Work without INTERNET", Toast.LENGTH_SHORT)
+                        .show()
+
+                    //create data for connection withour Internet
+
                     val carsFailureList = ArrayList<Result>()
                     carsFailureList.add(Result(3434, "BMW", 1, "A5"))
                     carsFailureList.add(Result(3434, "AUDI", 2, "A3"))
@@ -67,16 +66,11 @@ class MainActivity : AppCompatActivity() {
                     recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
                     recyclerView.setHasFixedSize(true)
                     recyclerView.adapter = adapter
-
+                    adapter.notifyDataSetChanged()
 
                 }
-
-
             })
     }
-
-
-
 
     override fun onRestart() {
         super.onRestart()
@@ -85,6 +79,11 @@ class MainActivity : AppCompatActivity() {
 
         // Activity being restarted from stopped state
     }
+
+    fun upload(view: View) {
+        onRestart()
+    }
+
 }
 
 

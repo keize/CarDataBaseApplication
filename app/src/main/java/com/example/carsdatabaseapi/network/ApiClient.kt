@@ -7,6 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiClient {
     companion object {
 
+        //create Retrofit connection with base api url
+
         private val BASE_URL = "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/"
         fun getRestEngine(): ApiInterface {
             val client = OkHttpClient.Builder().build()
